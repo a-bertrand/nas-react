@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Player} from './classes/Game';
 import { GameBoard} from './classes/Map';
 import { Unit } from './classes/Unit';
-import { getRandomInt } from 'all-tool';
 import Board from './game';
 import './css/app.css';
 // ------------------------------------------------------------------------------------
