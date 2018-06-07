@@ -55,3 +55,7 @@ ol, ul {
   stroke-width:1;
   fill:white;
 }
+#navbar-collapse-1
+{
+  display: block !important
+}
