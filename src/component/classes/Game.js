@@ -1,6 +1,5 @@
 import { Unit } from './Unit';
 import { GameBoard} from './Map';
-import {getRandomInt} from 'all-tool';
 // ------------------------------------------------------------------------------------
 export class Player 
 {
@@ -21,6 +20,10 @@ export class Player
         {
             let new_unit = new Unit(getRandomInt(12),getRandomInt(12),random_name[getRandomInt(10)],getRandomInt(10),getRandomInt(10),getRandomInt(10),getRandomInt(10),getRandomInt(10),getRandomInt(10),getRandomInt(10))
             this.army.push(new_unit)
+        }
+        function getRandomInt(max) 
+        {
+            return Math.floor(Math.random() * Math.floor(max));
         }
     }
 }

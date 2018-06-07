@@ -1,4 +1,3 @@
-import {getRandomInt} from '../../tools.js';
 // Unitée sur la map 
 export class Unit
 {
@@ -61,6 +60,10 @@ class Character
         }
         unit_def.hp -= damage
         return 'lattaquant '+this.name+' à reussit à mettre '+damage+' à '+unit_def.name
+        function getRandomInt(max) 
+        {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
     }
 }
 // --------------------------------------------------------------------
