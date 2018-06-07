@@ -1,5 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+#file
+deploy_NAS.sh
+
 # dependencies
 /node_modules
 
