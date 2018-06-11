@@ -41,7 +41,7 @@ const MainRoot = () => (
 const Home = () => (
   <div>
     <h2>Home</h2>
-    <form method="POST" action="http://127.0.0.1:3080/addUser" >
+    <form method="POST" action="http://192.168.1.36:3080/user/login" >
       <div class="input-form">
           <label>name</label>
           <input type="text" name="name"/>
