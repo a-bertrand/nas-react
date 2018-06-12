@@ -5,6 +5,7 @@ deploy_NAS.sh
 
 # dependencies
 /node_modules
+/src/other_project
 
 # testing
 /coverage
