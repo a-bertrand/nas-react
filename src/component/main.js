@@ -63,8 +63,6 @@ class Interface extends React.Component
       function updatetext(new_text)
       {
         text += new_text
-        console.log(text)
-       // _this.setState({text_cons : text})
       }
      }
     render() 

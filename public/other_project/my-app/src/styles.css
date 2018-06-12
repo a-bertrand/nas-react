@@ -1,0 +1,163 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+    Global Css
+*/
+/* Layout  */
+body
+{
+	background-image: url('/assets/image/backgroundheroe.jpeg');
+    color : hsla;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.nav_bar
+{
+    background-color: rgba(140,140,140,0.6) !important;
+    border-color: #e7e7e7;
+    border: 1px solid;
+    font-size: large;
+    text-align: center;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10
+}
+.navbar-default
+{
+    
+}
+footer
+{
+    margin-top: 50px;
+}
+/* -------------------------------------------------------- */
+#sidebar
+{
+    width : 100%; 
+    height: auto;
+    background-color: rgba(0,0,0,0.5); 
+    color: white;
+}
+.main_content
+{
+    margin-bottom: 50px;
+    background-color: rgba(240,240,240,0.6) !important;
+    padding: 1%;
+}
+.quantity_select
+{
+    background-color: white;
+    color: black;
+    width: 30px;
+}
+.layout_nav_registerbox
+{
+    float   :right;
+    width   :20%;
+}
+/* GENERIC FORM */
+
+#bs-example-navbar-collapse-8
+{
+    float   :left;
+    width   : 80%;
+}
+
+.generic_form
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.generic_form label
+{
+    width: 150px;
+}
+.generic_form input
+{
+    color: black;
+}
+.generic_form button
+{
+    color: black;
+}
+.generic_form select
+{
+    width: 160px;
+    color:black;
+}
+.actions
+{
+    
+}
+/* -------------------------------------------------------- */
+/* fix bootstrap */
+.container
+{
+   padding : 0px !important;
+}
+hr{margin : 0px !important;}
+
+.item-tosell
+{
+    text-align: center;
+    height: 300px;
+}
+.item-tosell img
+{
+    width: auto;
+    z-index: 1;
+    max-height: 200px;
+}
+.table-hover > tbody > tr:hover {
+    background-color: rgb(150,150,200) !important;}
+.box-user
+{
+    
+}
+.cart-button
+{
+    margin-top: -13px !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------- BACK OFFICE ----------------*/
+#backoffice_navbar
+{
+    position : fixed;
+    width : 100%;
+    top : 0;
+    font-size : large;
+    background-color: rgba(250,250,250,0.8);
+}
+.generic_form img 
+{
+    margin-left: auto;
+    margin-right:auto;
+}
+#preview_div 
+{
+    text-align: center;
+}
+/* -------------------------------------------------------- */
+.main_content ul 
+{
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.d3-chart {
+  width: 100%;
+  height: 400px;
+}
+ 
+.d3-chart .axis path,
+.d3-chart .axis line {
+  stroke: #999;
+}
+ 
+.d3-chart .axis text {
+  fill: #999;
+}
