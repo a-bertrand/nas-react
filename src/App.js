@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Game from './component/main';
@@ -94,4 +92,3 @@ const Topic = ({ match }) => (
 );
 
 export default MainRoot;
->>>>>>> e24555ed628f41b4d6715fba398b29cf330130b3

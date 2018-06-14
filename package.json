@@ -3,13 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "ajv-keywords": "^3.2.0",
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
-=======
     "background-process": "^1.0.0",
->>>>>>> e24555ed628f41b4d6715fba398b29cf330130b3
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
