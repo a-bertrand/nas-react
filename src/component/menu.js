@@ -21,10 +21,10 @@ class Menu extends React.Component
 				                <Link to="/about">A propos</Link>
 				              </li>
 				              <li>
-				                <Link to="/licenceprojects">Projet Licence</Link>
+				                <Link to="/games">Projet autre</Link>
 				              </li>
 				              <li>
-				                <Link to="/games">Autre projet</Link>
+				                <Link to="/licenceprojects">Projet école</Link>
 				              </li>
 				              <li>
 				                <Link to="/games">Fight Test</Link>
@@ -62,7 +62,7 @@ const projects = ({ match }) =>
         <a href="../other_project/school-htmlcssjs/index.html">Vers projet avec uniquement HTML / CSS / JS </a>
       </li>
       <li className="list-group-item">
-        <a href="/">Vers projet Angular (en cours d'update vers angular 6)</a>
+        <a href="http://angular.atlachnacha.synology.me/dashboard">Vers projet Angular (en cours d'update vers angular 6)</a>
       </li>
     </ul>
   </div>
