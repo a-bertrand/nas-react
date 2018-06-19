@@ -33,7 +33,7 @@ class Menu extends React.Component
 				          </div>
 				        </nav>
 			      	</div>
-			      	<div className="container text-center">
+			      	<div className="text-center">
 				        <Route exact path="/" component={Home} />
 				        <Route path="/about" component={About} />
 				        <Route path="/licenceprojects" component={projects} />

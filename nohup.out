@@ -1,0 +1,193 @@
+
+> route-test@0.1.0 start /volume1/homes/Noromance38/www/reactjs/nas-react
+> react-scripts start
+
+Starting the development server...
+
+Compiled with warnings.
+
+./src/component/classes/Map.js
+  Line 12:  'Map' is defined but never used  no-unused-vars
+
+./src/component/classes/Unit.js
+  Line 14:  'Character' is defined but never used  no-unused-vars
+
+./src/component/game.js
+  Line 1:  'Component' is defined but never used  no-unused-vars
+  Line 2:  'Player' is defined but never used     no-unused-vars
+  Line 4:  'Unit' is defined but never used       no-unused-vars
+
+./src/component/main.js
+  Line 2:    'ReactDOM' is defined but never used         no-unused-vars
+  Line 4:    'GameBoard' is defined but never used        no-unused-vars
+  Line 33:   'i' is already defined                       no-redeclare
+  Line 44:   '_this' is assigned a value but never used   no-unused-vars
+  Line 47:   Unexpected string concatenation of literals  no-useless-concat
+  Line 136:  'getRandomInt' is defined but never used     no-unused-vars
+
+./src/component/classes/Game.js
+  Line 2:  'GameBoard' is defined but never used  no-unused-vars
+
+./src/index.js
+  Line 3:  'getRandomInt' is defined but never used  no-unused-vars
+
+./src/App.js
+  Line 9:  The element nav has an implicit role of navigation. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+Compiling...
+Failed to compile.
+
+./src/App.js
+Syntax error: Unexpected token (1:1)
+
+> 1 | <<<<<<< HEAD
+    |  ^
+  2 | =======
+  3 | import React from "react";
+  4 | import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+Compiling...
+Failed to compile.
+
+./src/App.js
+Syntax error: Unexpected token (1:1)
+
+> 1 | <<<<<<< HEAD
+    |  ^
+  2 | =======
+  3 | import React from "react";
+  4 | import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+Compiling...
+Failed to compile.
+
+./src/App.js
+Syntax error: Unexpected token (95:0)
+
+  93 | 
+  94 | export default MainRoot;
+> 95 | >>>>>>> e24555ed628f41b4d6715fba398b29cf330130b3
+     | ^
+  96 |
+Compiling...
+Failed to compile.
+
+./src/index.js
+Module not found: Syntax/volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: Unexpected token < in JSON at position 87
+Compiling...
+Failed to compile.
+
+./src/App.js
+Syntax error: Unexpected token (1:1)
+
+> 1 | <<<<<<< HEAD
+    |  ^
+  2 | =======
+  3 | import React from "react";
+  4 | import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+Compiling...
+Failed to compile.
+
+./src/index.js
+Module not found: Syntax/volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: /volume1/homes/Noromance38/www/reactjs/nas-react/package.json (directory description file): SyntaxError: Unexpected token < in JSON at position 87
+
+> route-test@0.1.0 start /volume1/homes/Noromance38/www/reactjs/nas-react
+> react-scripts start
+
+Starting the development server...
+
+Compiled with warnings.
+
+./src/component/classes/Map.js
+  Line 12:  'Map' is defined but never used  no-unused-vars
+
+./src/component/classes/Unit.js
+  Line 14:  'Character' is defined but never used  no-unused-vars
+
+./src/component/menu.js
+  Line 14:  The element nav has an implicit role of navigation. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+  Line 71:  'Topic' is assigned a value but never used                                                                       no-unused-vars
+
+./src/component/game.js
+  Line 1:  'Component' is defined but never used  no-unused-vars
+  Line 2:  'Player' is defined but never used     no-unused-vars
+  Line 4:  'Unit' is defined but never used       no-unused-vars
+
+./src/component/main.js
+  Line 2:    'ReactDOM' is defined but never used         no-unused-vars
+  Line 4:    'GameBoard' is defined but never used        no-unused-vars
+  Line 33:   'i' is already defined                       no-redeclare
+  Line 44:   '_this' is assigned a value but never used   no-unused-vars
+  Line 47:   'text' is assigned a value but never used    no-unused-vars
+  Line 47:   Unexpected string concatenation of literals  no-useless-concat
+  Line 134:  'getRandomInt' is defined but never used     no-unused-vars
+
+./src/component/classes/Game.js
+  Line 2:  'GameBoard' is defined but never used  no-unused-vars
+
+./src/index.js
+  Line 3:  'getRandomInt' is defined but never used  no-unused-vars
+  Line 4:  'App' is defined but never used           no-unused-vars
+
+./src/component/menu/home.js
+  Line 6:   Useless constructor                          no-useless-constructor
+  Line 25:  'mydata' is assigned a value but never used  no-unused-vars
+  Line 27:  'config' is assigned a value but never used  no-unused-vars
+
+./src/App.js
+  Line 9:  The element nav has an implicit role of navigation. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+
+> route-test@0.1.0 start /volume1/homes/Noromance38/www/reactjs/nas-react
+> react-scripts start
+
+Starting the development server...
+
+Compiled with warnings.
+
+./src/component/classes/Map.js
+  Line 12:  'Map' is defined but never used  no-unused-vars
+
+./src/component/classes/Unit.js
+  Line 14:  'Character' is defined but never used  no-unused-vars
+
+./src/component/menu.js
+  Line 14:  The element nav has an implicit role of navigation. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+  Line 71:  'Topic' is assigned a value but never used                                                                       no-unused-vars
+
+./src/component/game.js
+  Line 1:  'Component' is defined but never used  no-unused-vars
+  Line 2:  'Player' is defined but never used     no-unused-vars
+  Line 4:  'Unit' is defined but never used       no-unused-vars
+
+./src/component/main.js
+  Line 2:    'ReactDOM' is defined but never used         no-unused-vars
+  Line 4:    'GameBoard' is defined but never used        no-unused-vars
+  Line 33:   'i' is already defined                       no-redeclare
+  Line 44:   '_this' is assigned a value but never used   no-unused-vars
+  Line 47:   'text' is assigned a value but never used    no-unused-vars
+  Line 47:   Unexpected string concatenation of literals  no-useless-concat
+  Line 134:  'getRandomInt' is defined but never used     no-unused-vars
+
+./src/component/classes/Game.js
+  Line 2:  'GameBoard' is defined but never used  no-unused-vars
+
+./src/index.js
+  Line 3:  'getRandomInt' is defined but never used  no-unused-vars
+  Line 4:  'App' is defined but never used           no-unused-vars
+
+./src/component/menu/home.js
+  Line 6:   Useless constructor                          no-useless-constructor
+  Line 25:  'mydata' is assigned a value but never used  no-unused-vars
+  Line 27:  'config' is assigned a value but never used  no-unused-vars
+
+./src/App.js
+  Line 9:  The element nav has an implicit role of navigation. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
