@@ -1,0 +1,18 @@
+#UI-player
+{
+	border : 1px solid white;
+	min-height: 800px;
+}
+#UI-map
+{
+	border : 1px solid white;
+	min-height: 800px;
+}
+#UI-map button
+{
+color:black;
+}
+#UI-map svg
+{
+	margin: 10px auto 0 auto;
+}

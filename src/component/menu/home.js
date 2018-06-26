@@ -2,8 +2,10 @@ import React from "react";
 import axios from 'axios';
 import {WorkExperience, WorkCategory, generate_fake_data} from '../classes/WorkExperience';
 import FontAwesomeIcon from 'react-fontawesome'
+import WelcomePopup from '../welcomepopup';
+
 /* ------------------------------------------------------------------------- */
-class Home_content extends React.Component 
+class HomeContent extends React.Component 
 {
 	constructor(props) 
 	{
@@ -66,24 +68,53 @@ class Home_content extends React.Component
 		  });
 */
 	}
-	generate_presentation()
+	generate_presentation(array)
 	{
-		let html = '<div class="col-md-6">'
-		html += '<div class="row">'
-		html += '<div class="col-md-4">'
 
+		let array_cat	= array[1]
+		let array_exp	= array[0]
+		let html = ''
+		html += '<div class="col-md-6" id="cv-perso-persentation">'
+		html += '<div class="row">'
+		
+		html += '<div class="col-md-4">'
+		html += '<div class="box-pict-text">'
 		html += '<img class="img-responsive profile-picture" src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png"/>'
+		html += '</div>'
+		html += '</div>'
+
+		html += '<div class="col-md-8">'
+		html += '<div class="box-pict-text" id="personnal-information-box">'
+		html += '<p>Anthony Bertrand</p>'
+		html += '<p>Développeur informatique</p>'
+		html += '<p>28, rue de la roseraie à Gières</p>'
 		html += '<p>26 ans (04/07/1991)</p>'
 		html += '<p>Permis B</p>'
+		html += '</div>'
+		html += '</div>'
 
-		html += '</div>'
-		html += '<div class="col-md-8">'
+		html += '<div class="col-md-12">'
+		for (var i = array_cat.length - 1; i >= 0; i--) 
+		{
+			let current_cat = array_cat[i]
+			if ( i == 5)
+			{
+				for (var j = 0; j < array_exp.length; j++) 
+				{
+					let current_exp = array_exp[j]
+					if(current_exp.workcat == current_cat)
+					{
+						html += '<div class="card"><div class="card-header">'+current_exp.job_title+' | '+current_exp.company+' | '+current_exp.startdate.getFullYear()+' - '+current_exp.enddate.getFullYear()+'</div>';
+						html += '<div class="card-body">'+current_exp.summary+'</div>'
+						html += '</div>'
+					}
+				}
+			}
+		}
+		html += '</div><!-- end of md12-->'
+		html += '</div><!-- end of row -->'
+		html += '</div><!-- end of md6 -->'
 
-		html += ''
-
-		html += '</div>'
-		html += '</div>'
-		html += '</div>'
 		return (html);
 	}
 	generate_data()
@@ -92,13 +123,13 @@ class Home_content extends React.Component
 		let array 	= generate_fake_data()
 		let array_cat	= array[1]
 		let array_exp	= array[0]
-		let html = ''
-		for (var i = array_cat.length - 1; i >= 0; i--) 
+		let html = this.generate_presentation(array)
+		for (var i = 4; i >= 0; i--) 
 		{
 			let current_cat = array_cat[i]
-			if ( i == 2)
+			if ( i == 3)
 			{
-				html += this.generate_presentation()+'<div class="col-md-6" id="exp_pro"><h2>'+current_cat.title+'</h2>';
+				html += '<div class="col-md-6" id="exp_pro"><h2>'+current_cat.title+'</h2>';
 				for (var j = 0; j < array_exp.length; j++) 
 				{
 					let current_exp = array_exp[j]
@@ -135,7 +166,7 @@ class Home_content extends React.Component
 				}
 				html += '</div>';
 			}
-			else
+			else if (i== 0 || i == 1 || i == 2) 
 			{
 				html += '<div class="col-md-6">'
 				html += '<table class="table"><thead><tr> <th>'+current_cat.title+'</th></tr></thead><tbody>'
@@ -168,29 +199,18 @@ class Home_content extends React.Component
 	render()
 	{
 	    return(
+	    	
 			<div>
 				<hr />
 			  	<div className="row" dangerouslySetInnerHTML={{__html: this.generate_data()}} >
 			  	</div>
+				<div >
+		    		<WelcomePopup />
+		    	</div>
 			</div>
 	    );
 	}
 }
 
 
-export default Home_content; 
-
-/*
-<h2>Home</h2>
-		    <form onSubmit={this.validateform}>
-				<div className="input-form">
-					<label>name</label>
-					<input type="text" name="name"/>
-				</div>
-				<div className="input-form">
-					<label>password</label>
-					<input type="text" name="password"/>
-				</div>
-				<button type="submit"> Valider </button>
-			</form>
-			*/
+export default HomeContent; 
