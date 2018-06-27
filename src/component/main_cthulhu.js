@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './kill_the_cthulhu/style.css';
-import Uimap from './kill_the_cthulhu/map.js'
+import Uimap from './kill_the_cthulhu/component/map.js'
+import Uihud from './kill_the_cthulhu/component/hud.js'
 /*
     Interface : HP héros, Texte event 
       Map       : Affichage de la carte 
@@ -22,9 +23,9 @@ class Interface extends React.Component
     render() 
     {
         return (
-        <div className="row">
+        <div className="row"> 
           <div id="UI-player" className='col-md-4'>
-            <p>{this.state.selected_hero}</p>
+            <Uihud />
           </div>
           <div id="UI-map" className="col-md-8">
             <Uimap />

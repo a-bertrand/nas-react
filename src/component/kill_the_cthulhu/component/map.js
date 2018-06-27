@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Fullmap, Square} from  './classes/map'
+import {Fullmap, Square} from  './../classes/map'
 // ------------------------------------------------------------------------------------
 // MAIN COMPONENT 
 class UImap extends React.Component 
@@ -51,11 +51,11 @@ class UImap extends React.Component
             let y = current_case.y * case_width
             if (current_case.level == 2)
             {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./assets/image/wall.jpeg')} />)
+                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/wall.jpeg')} />)
             }
             else
             {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./assets/image/grass.jpeg')}/>)
+                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/grass.jpeg')}/>)
             }
         }
     	this.setState({boardcontent:all_case})
@@ -68,7 +68,6 @@ class UImap extends React.Component
                     <button onClick={this.generate_map.bind(this)}> Start game </button>
                 </div>
                 <div>
-
                     <svg className="map" height="750" width="750"  >
                         {this.state.boardcontent}
                     </svg>
