@@ -1,16 +1,11 @@
 import React from "react";
 import axios from 'axios';
-import {WorkExperience, WorkCategory, generate_fake_data} from '../classes/WorkExperience';
-import FontAwesomeIcon from 'react-fontawesome'
+import {generate_fake_data} from '../classes/WorkExperience';
 import WelcomePopup from '../welcomepopup';
 
 /* ------------------------------------------------------------------------- */
 class HomeContent extends React.Component 
 {
-	constructor(props) 
-	{
-	    super(props);
-	}
 	validateform(event)
 	{
 		let name = 'test'//event.target.name.value
@@ -97,12 +92,12 @@ class HomeContent extends React.Component
 		for (var i = array_cat.length - 1; i >= 0; i--) 
 		{
 			let current_cat = array_cat[i]
-			if ( i == 5)
+			if ( i === 5)
 			{
 				for (var j = 0; j < array_exp.length; j++) 
 				{
 					let current_exp = array_exp[j]
-					if(current_exp.workcat == current_cat)
+					if(current_exp.workcat === current_cat)
 					{
 						html += '<div class="card"><div class="card-header">'+current_exp.job_title+' | '+current_exp.company+' | '+current_exp.startdate.getFullYear()+' - '+current_exp.enddate.getFullYear()+'</div>';
 						html += '<div class="card-body">'+current_exp.summary+'</div>'
@@ -127,13 +122,13 @@ class HomeContent extends React.Component
 		for (var i = 4; i >= 0; i--) 
 		{
 			let current_cat = array_cat[i]
-			if ( i == 3)
+			if ( i === 3)
 			{
 				html += '<div class="col-md-6" id="exp_pro"><h2>'+current_cat.title+'</h2>';
 				for (var j = 0; j < array_exp.length; j++) 
 				{
 					let current_exp = array_exp[j]
-					if(current_exp.workcat == current_cat)
+					if(current_exp.workcat === current_cat)
 					{
 						let startdate;
 						if(current_exp.startdate.getMonth()+1 < 10)
@@ -145,7 +140,7 @@ class HomeContent extends React.Component
 							startdate = (current_exp.startdate.getMonth()+1)+'.'+current_exp.startdate.getFullYear()
 						}
 						let enddate = "Aujourd'hui"
-						if (current_exp.enddate == 'actuel')
+						if (current_exp.enddate === 'actuel')
 						{/*nothing*/} 
 						else
 						{
@@ -166,7 +161,7 @@ class HomeContent extends React.Component
 				}
 				html += '</div>';
 			}
-			else if (i== 0 || i == 1 || i == 2) 
+			else if (i === 0 || i === 1 || i === 2) 
 			{
 				html += '<div class="col-md-6">'
 				html += '<table class="table"><thead><tr> <th>'+current_cat.title+'</th></tr></thead><tbody>'
@@ -185,7 +180,7 @@ class HomeContent extends React.Component
 							level_display += "<span style='width:20px;height:20px;'> <i class='fa fa-circle fa-opacity-half'></i> </span>"
 						}
 					}
-					if(current_exp.workcat == current_cat)
+					if(current_exp.workcat === current_cat)
 					{
 						html += '<tr><td>'+current_exp.title+'</td><td class="text-left">'+level_display+'</td></tr>'
 					}

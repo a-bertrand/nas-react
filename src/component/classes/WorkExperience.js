@@ -83,7 +83,7 @@ export function generate_fake_data()
     array_exp.push(new WorkExperience('Prestashop',5,cat_fram))
     array_exp.push(new WorkExperience('D3.js',7,cat_fram))
     array_exp.push(new WorkExperience('Qt',4,cat_fram))
-    array_exp.push(new WorkExperience('jQuery & jQuery UI & Mobile',8,cat_fram))
+    array_exp.push(new WorkExperience('jQuery, UI & Mobile',8,cat_fram))
     // ---------------------------------------
     // cat_company // job_title,summary,startdate,enddate,company,workca
     array_exp.push(new WorkCompany("Developpeur Web (Acutellement)","Accompagnement digital pour la transformation numérique d'un réseau d'agence immobilière. BackEnd avec Django + API REST avec un Front sous EmberJs et un  Front d'administration sous Django, D3js et ReactJs","2017-12","2018-07","Nitroserv",cat_company_info))
