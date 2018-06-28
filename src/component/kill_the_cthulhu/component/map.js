@@ -40,7 +40,11 @@ class UImap extends React.Component
     }
     generate_map()
     {
-        let current_map = this.create_default_map()
+        var current_map = this.create_default_map()
+        if (this.props.selectedmap !== false)
+        {
+            current_map = this.props.selectedmap 
+        }
     	let all_case = [];
         let case_width = this.state.case_width
         for (var i = 0; i < current_map.cases.length; i++) 
@@ -58,60 +62,27 @@ class UImap extends React.Component
             }
             if (current_case.element === 'hero')
             {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/player.jpeg')}/>)
+                all_case.push(<Case key='hero' x={x} y={y} width_case={case_width} fill={require('./../assets/image/player.jpeg')}/>)
             }
             else if (current_case.element === 'monster')
             {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/cthulhu.png')}/>)
+                all_case.push(<Case key='monster' x={x} y={y} width_case={case_width} fill={require('./../assets/image/cthulhu.png')}/>)
             }
         }
     	this.setState({boardcontent:all_case})
-        this.props.callback(current_map)
-    }
-    generate_map_without_create()
-    {
-        let current_map =this.props.selectedmap 
-        console.log(current_map)
-        let all_case = [];
-        let case_width = this.state.case_width
-        for (var i = 0; i < current_map.cases.length; i++) 
+        if (this.props.selectedmap == false)
         {
-            let current_case = current_map.cases[i]
-            let x = current_case.x * case_width
-            let y = current_case.y * case_width
-            if (current_case.level === 2)
-            {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/wall.jpeg')} />)
-            }
-            else
-            {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/grass.jpeg')}/>)
-            }
-            if (current_case.element === 'hero')
-            {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/player.jpeg')}/>)
-            }
-            else if (current_case.element === 'monster')
-            {
-                all_case.push(<Case key={i} x={x} y={y} width_case={case_width} fill={require('./../assets/image/cthulhu.png')}/>)
-            }
+            this.props.callback(current_map)
         }
-        this.setState({boardcontent:all_case})
-        this.props.callback(current_map)
     }
     /* Life cycle */
     componentDidMount()
     {
-        console.log('on component child',this.state.currentmap, this.props.selectedmap)
-        if (this.props.selectedmap == false)
-        {
-            this.generate_map()
-        }
-        else
-        {
-            this.generate_map_without_create.bind(this)
-        }
-        
+        this.generate_map()
+    }
+    componentWillReceiveProps()
+    {
+        this.generate_map()
     }
     render() 
     {

@@ -21,24 +21,7 @@ class Uihud extends React.Component
         this.setState({hp_max:hero.hp*width_multiplicator})
         this.setState({hp:hero.hp*width_multiplicator})
         this.setState({selected_hero:hero})
-        document.addEventListener("keydown", this.movement.bind(this), false);
         this.props.callback(hero)
-    }
-    movement(e)
-    {
-        var key = "";
-        if (e.key === "ArrowLeft"){ 
-            key = "left";
-        }
-        else if (e.key === "ArrowUp"){ 
-            key = "top";
-        }
-        else if (e.key === "ArrowDown"){ 
-            key = "bot" ;
-        }       
-        else if (e.key === "ArrowRight"){ 
-            key = "right";
-        } 
     }
     take_damage()
     {

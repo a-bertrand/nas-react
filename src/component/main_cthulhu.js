@@ -12,16 +12,18 @@ import Uihud from './kill_the_cthulhu/component/hud.js'
 // ------------------------------------------------------------------------------------
 class Interface extends React.Component 
 {
-    constructor(props) 
-    {
+    constructor(props){
         super(props);
         this.state = {
           selected_hero : false,
           selected_map : false,
+          monster :  false,
           text_cons : '',
+          last_position:'',
         };
-        
     }
+    /* -------------------------------------------------------------------------------- */
+    // Callback from child
     myHero(dataFromComponent_player) 
     {
       this.setState({ selected_hero: dataFromComponent_player});
@@ -30,19 +32,87 @@ class Interface extends React.Component
     {
       this.setState({ selected_map: dataFromComponent_map});
     }
-    initplace()
+    /* -------------------------------------------------------------------------------- */
+    /* Mouvement & place */
+    // 1 - grass / 2 - wall
+    monster_setplace(x,y)
     {
-        console.log('on init')
-        let map = this.state.selected_map
-        map.cases[50].element = 'hero'
-        this.setState({ selected_map:map})
+        // place du hero ( 14/14 )
+        let map   = this.state.selected_map
+        let hero  = this.state.selected_hero
+        let position = map.get_case_by_XY(x,y)
+
+        if (map.cases[position].level == 2){
+          //movement impossible
+          console.log('mouvement impossible')
+        }
+        else{
+          if (this.state.last_position){
+            map.cases[this.state.last_position].element = false
+          }
+          map.cases[position].element = 'hero'
+          hero.position[0] = x
+          hero.position[1] = y
+
+          this.setState({ selected_map:map})
+          this.setState({ last_position:position})
+          this.setState({ selected_hero:hero})
+        }
+    }
+    /* ---------------------------------------- */
+    hero_setplace(x,y)
+    {
+        // place du hero ( 14/14 )
+        let map   = this.state.selected_map
+        let hero  = this.state.selected_hero
+        let position = map.get_case_by_XY(x,y)
+
+        if (map.cases[position].level == 2){
+          //movement impossible
+          console.log('mouvement impossible')
+        }
+        else{
+          if (this.state.last_position){
+            map.cases[this.state.last_position].element = false
+          }
+          map.cases[position].element = 'hero'
+          hero.position[0] = x
+          hero.position[1] = y
+
+          this.setState({ selected_map:map})
+          this.setState({ last_position:position})
+          this.setState({ selected_hero:hero})
+        }
+    }
+    /* ---------------------------------------- */
+    movement(e)
+    {
+        var key = "";
+        let hero = this.state.selected_hero
+
+        if (e.key === "ArrowLeft"){ 
+            this.hero_setplace(hero.position[0]-1, hero.position[1])//.bind(this,12,12)
+        }
+        else if (e.key === "ArrowUp"){ 
+            this.hero_setplace(hero.position[0], hero.position[1]-1)
+        }
+        else if (e.key === "ArrowDown"){ 
+            this.hero_setplace(hero.position[0], hero.position[1]+1)
+        }       
+        else if (e.key === "ArrowRight"){ 
+            this.hero_setplace(hero.position[0]+1, hero.position[1])
+        }
+    }
+    /* -------------------------------------------------------------------------------- */
+    /* life cycle */
+    componentDidMount()
+    {
+      document.addEventListener("keydown", this.movement.bind(this), false);
     }
     render() 
     {
-      console.log('render',this.state.selected_map, this.state.selected_hero)
         return (
         <div className="row"> 
-          <button onClick={this.initplace.bind(this)}>Place player</button>
           <div id="UI-player" className='col-md-4'>
             <Uihud callback={this.myHero.bind(this)}/>
           </div>
