@@ -1,43 +1,52 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {Hero} from './../classes/hero';
 // ------------------------------------------------------------------------------------
 // MAIN COMPONENT 
-const width_multiplicator = 14;
-
 class Uihud extends React.Component 
 {
     constructor(props) 
     {
         super(props);
         this.state = {
-          selected_hero  : '',
-          hp_max : 0,
-          hp : 0,
+          selected  : '',
+          hp_max : 40,
+          hp : 40,
+
         };
+    }
+    init_hero()
+    {
+        let hero = new Hero('Cartman',12)
+        this.setState({})
+
     }
     componentDidMount()
     {
-        let hero = new Hero('Cartman',12)
-        this.setState({hp_max:hero.hp*width_multiplicator})
-        this.setState({hp:hero.hp*width_multiplicator})
-        this.setState({selected_hero:hero})
-        this.props.callback(hero)
+        console.log('aze')
+        document.addEventListener("keydown", this.movement, false);
     }
-    take_damage()
+    movement(e)
     {
-        let hero = this.state.selected_hero
-        hero.hp = hero.hp-1
-        this.setState({hp:hero.hp*width_multiplicator})
-        this.setState({selected_hero:hero})
+        e.stopPropagation();
+        var key = "";
+        if      (e.key =="ArrowLeft")  { key = "left";   this.move_char;  }
+        else if (e.key =="ArrowUp")    { key = "top";    this.move_char;  }
+        else if (e.key =="ArrowDown")  { key = "bot" ;   this.move_char;  }       
+        else if (e.key =="ArrowRight") { key = "right";  this.move_char;  } 
+        console.log(key)
+    }
+    move_char(key)
+    {
+        console.log('lol',key)
     }
     render()
     {
         return(
             <div>
-                <p> Vie restante de {this.state.selected_hero.name} : {this.state.hp} /{this.state.hp_max} </p>
-                <svg width="400px" height="100px">
-                    <rect x='1' y='20' width={this.state.hp_max} height="30px" fill='none' stroke="black"/>
-                    <rect x='1' y='20' width={this.state.hp}  height="30px" fill='red' stroke="black"/>
+                <svg width="100px" height="40px">
+                    <rect x='0' y='0' width={this.props.hp_max} height="40px" fill='transparent' stroke="black"/>
+                    <rect x='0' y='0' width={this.props.hp}  height="40px" fill='red' stroke="black"/>
                 </svg>
             </div>
         )

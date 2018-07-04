@@ -1,4 +1,4 @@
-export class Character 
+export class Hero 
 {
     constructor(name, hp, type) 
     {

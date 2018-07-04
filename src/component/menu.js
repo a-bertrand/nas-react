@@ -50,13 +50,16 @@ const Persoprojects = ({ match }) =>
     <h2><i className="fa fa-list-ul"></i> Liste des projets persos: </h2>
     <ul className="list-group">
       <li className="list-group-item">
-        <a href="http://django.atlachnacha.synology.me/home">Site de mon groupe : " Rise Of Doom "</a>
+        <a href="http://django.atlachnacha.synology.me/home">Site (En cours) de mon groupe : " Rise Of Doom " -> Django (Framework Python)</a>
       </li>
       <li className="list-group-item">
-        <Link to="/project_cthulhu">Kill the Cthulhu</Link>
+        <Link to="/project_cthulhu">Kill the Cthulhu, Jeu vidéo basé sur un projet d'école refait en reactJS</Link>
       </li>
       <li className="list-group-item">
-        <Link to="/project_game">Projet perso</Link>
+        <Link to="/project_game">Jeu en reactJS et D3.js</Link>
+      </li>
+      <li className="list-group-item">
+        <Link to="http://nodeJS.atlachnacha.synology.me/dashboard">NodeJS</Link>
       </li>
     </ul>
 
@@ -78,7 +81,10 @@ const projects = ({ match }) =>
         <a href="../other_project/school-htmlcssjs/index.html">Vers projet avec uniquement HTML / CSS / JS </a>
       </li>
       <li className="list-group-item">
-        <a href="http://angular.atlachnacha.synology.me/dashboard">Vers projet Angular (en cours d'update vers angular 6)</a>
+        <a href="http://angular.atlachnacha.synology.me/dashboard">Vers projet Angular (projet Angular 2 passé en 6 + D3js) gestionnaire de Héro + début de petit jeu</a>
+      </li>
+      <li className="list-group-item">
+        <a href="http://angular.atlachnacha.synology.me/dashboard">NodeJS</a>
       </li>
     </ul>
   </div>
