@@ -63,32 +63,63 @@ class HomeContent extends React.Component
 		  });
 */
 	}
-	generate_presentation(array)
-	{
-
-		let array_cat	= array[1]
-		let array_exp	= array[0]
+	generate_presentation_box()
+	{			
 		let html = ''
-		html += '<div class="col-md-6" id="cv-perso-persentation">'
-		html += '<div class="row">'
-		
 		html += '<div class="col-md-4">'
 		html += '<div class="box-pict-text">'
 		html += '<img class="img-responsive profile-picture" src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png"/>'
 		html += '</div>'
-		html += '</div>'
+		html += '</div> <!-- end of col-md-4 -->'
 
 		html += '<div class="col-md-8">'
 		html += '<div class="box-pict-text" id="personnal-information-box">'
 		html += '<p>Anthony Bertrand</p>'
 		html += '<p>Développeur informatique</p>'
-		html += '<p>28, rue de la roseraie à Gières</p>'
-		html += '<p>26 ans (04/07/1991)</p>'
+		html += '<p>28, rue de la roseraie à Gières 38610</p>'
+		html += '<p>27 ans (04/07/1991)</p>'
 		html += '<p>Permis B</p>'
 		html += '</div>'
-		html += '</div>'
+		html += '</div> <!-- end of col-md-8 -->'
+		return html
+	}
+	generate_hobby_box()
+	{	let html = ''
+		let content =[['<i class="fa fa-desktop"></i> Geek',"Vieille technologique notament liée à la BlockChain, aux technos du web, IA et Deep leaning. Je suis aussi un joueur de jeu vidéo sur PC ainsi que les jeux de sociétés. "], 
+			['<i class="fa fa-globe"></i> Voyage',"J'ai eu l'occasion de voyager dans toute l'europe (Slovénie, Belgique, Autriche, Suisse, Allemagne, République tchèque) et dans treize villes à l'ouest de la Russie grâce à mon groupe. J'ai pour projet dans les futurs anénes de faire plusieurs autre pays comme le Japon et le Canada"], 
+			['<i class="fa fa-music"></i> Musique',"Guitariste, bassiste et batteur. J'ai déjà fait plus d'une centaine de concert, organiser des concerts et gérer des groupes. J'ai aussi donné de nombreux cours de guitare."]
+		]
+		html += '<div class="row"><hr/>'
+			html+= '<div class="col-lg-12">'
+			html += '<h2>Qui suis-je ?</h2>'
+			html += '</div>'
+			for (var i = 0; i < content.length; i++) {
+				
+				html += '<div class="col-lg-4">'
+					html += '<div class="card">'
+						html += '<div class="card-header">'
+						html += content[i][0]
+						html += '</div>'
+						html += '<div class="card-body">'
+						html += content[i][1]
+						html += '</div>'
+					html += '</div>'
+				html += '</div>'
+			}
+			
 
-		html += '<div class="col-md-12">'
+		html += '</div>'
+		return html
+	}
+	generate_presentation(array)
+	{
+
+		let array_cat	= array[1]
+		let array_exp	= array[0]
+		let html = '<div class="row">'
+		html += '<div class="col-lg-12" id="cv-perso-persentation">'
+		html += this.generate_presentation_box()
+		html += '</div>'
 		for (var i = array_cat.length - 1; i >= 0; i--) 
 		{
 			let current_cat = array_cat[i]
@@ -99,17 +130,16 @@ class HomeContent extends React.Component
 					let current_exp = array_exp[j]
 					if(current_exp.workcat === current_cat)
 					{
+						html += '<div class="col-lg-12 col-md-12">'
 						html += '<div class="card"><div class="card-header">'+current_exp.job_title+' | '+current_exp.company+' | '+current_exp.startdate.getFullYear()+' - '+current_exp.enddate.getFullYear()+'</div>';
 						html += '<div class="card-body">'+current_exp.summary+'</div>'
 						html += '</div>'
+						html += '</div><!-- end of lg6-->'
 					}
 				}
 			}
 		}
-		html += '</div><!-- end of md12-->'
-		html += '</div><!-- end of row -->'
-		html += '</div><!-- end of md6 -->'
-
+		html += '</div>'
 		return (html);
 	}
 	generate_data()
@@ -118,9 +148,10 @@ class HomeContent extends React.Component
 		let array 	= generate_fake_data()
 		let array_cat	= array[1]
 		let array_exp	= array[0]
-		let html = this.generate_presentation(array)
-		for (var i = 4; i >= 0; i--) 
-		{
+		let html =  '<div class="col-lg-6">'
+		html += this.generate_presentation(array)
+		html += '</div>'
+		for (var i = 4; i >= 0; i--){
 			let current_cat = array_cat[i]
 			if ( i === 3)
 			{
@@ -161,8 +192,7 @@ class HomeContent extends React.Component
 				}
 				html += '</div>';
 			}
-			else if (i === 0 || i === 1 || i === 2) 
-			{
+			else if (i === 0 || i === 1 || i === 2){
 				html += '<div class="col-md-6">'
 				html += '<table class="table"><thead><tr> <th>'+current_cat.title+'</th></tr></thead><tbody>'
 				for (var j = array_exp.length - 1; j >= 0; j--) 
@@ -189,12 +219,13 @@ class HomeContent extends React.Component
 				html += '</tbody></table></div>'
 			}
 		}
+		html += '<div class="col-lg-12">'
+		html += this.generate_hobby_box()
+		html += '</div>'
 		return (html);
 	}
-	render()
-	{
+	render(){
 	    return(
-	    	
 			<div>
 				<hr />
 			  	<div className="row" dangerouslySetInnerHTML={{__html: this.generate_data()}} >
