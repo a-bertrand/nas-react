@@ -41,24 +41,23 @@ body {
     text-align:left;
     border-radius: 10px;
     margin-bottom: 15px;
+    padding:2%;
 }
 .card-header
 {
 	height: auto;
-	padding:1%;
 	font-size: 16px;
 	font-weight: bold;
 	border-bottom:1px solid #e7e7e7;
 }
 .card-body
 {
-	padding:1%;
+	
 }
 .box-pict-text
 {
 	height: 180px;
 	border:1px solid #e7e7e7;
-	margin-bottom: 15px;
 	margin-bottom: 15px;
 }
 #personnal-information-box
@@ -76,4 +75,10 @@ body {
 #cv-perso-persentation
 {
 	margin-top: 20px;
+}
+.box-hobby
+{
+	border:1px solid #e7e7e7;
+	padding: 2%;
+	margin-bottom: 15px;
 }
